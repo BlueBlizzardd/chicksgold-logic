@@ -9,7 +9,7 @@ export const StepList: Component<{ steps: Step[] }> = (props) => {
                 <table>
                     <thead>
                         <tr>
-
+                            <th>Step</th>
                             <th>Bucket 1</th>
                             <th>Bucket 2</th>
                             <th>Explanation</th>
@@ -17,8 +17,9 @@ export const StepList: Component<{ steps: Step[] }> = (props) => {
                     </thead>
                     <tbody>
                         <For each={props.steps}>
-                            {step =>
+                            {(step, index) =>
                                 <tr>
+                                    <td>{index() + 1}</td>
                                     <td>{step[0]}</td>
                                     <td>{step[1]}</td>
                                     <td>Jug 1 has {step[0]}L, Jug 2 has {step[1]}L.</td>

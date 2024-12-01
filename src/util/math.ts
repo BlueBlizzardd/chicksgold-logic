@@ -1,10 +1,10 @@
 import { Step } from "../types/step";
 
-function gcd(a: number, b: number): number {
+export function gcd(a: number, b: number): number {
     return b === 0 ? a : gcd(b, a % b);
 }
 
-function pour(pourer: number, receiver: number, amount: number) {
+export function pour(pourer: number, receiver: number, amount: number) {
     // Initialize current amount of water in source and destination jugs
     let from = pourer;
     let to = 0;
