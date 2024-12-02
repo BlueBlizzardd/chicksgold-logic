@@ -1,0 +1,66 @@
+.heading+div {
+    text-align: center;
+}
+
+.solution-container {
+    container: solution / inline-size;
+    flex-basis: 100%;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin-inline: auto;
+
+    tr,
+    th,
+    td {
+        border: 2px solid black;
+        border-radius: 4px;
+    }
+
+    th,
+    td {
+        padding: 0.5rem;
+    }
+
+    th {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}
+
+@container solution (width < 600px) {
+
+    table,
+    tr,
+    td {
+        display: block;
+    }
+
+    thead>tr,
+    th {
+        display: none;
+    }
+
+    table {
+
+        td {
+            border-block: 1px solid black;
+            border-radius: 0;
+
+            &::before {
+                content: attr(data-column) ': ';
+                text-transform: capitalize;
+                font-weight: bold;
+            }
+
+            &:first-child {
+                text-align: center;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

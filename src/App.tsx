@@ -16,17 +16,19 @@ export const App = () => {
   }
 
   return (
-    <div class='container flex flex-column'>
-      <h1 class='heading'>Water Jug Problem</h1>
-      <div>This program is meant to calculate the Water Jug puzzle through
-        the least amount of steps possible.
+    <div class='container flex'>
+      <div class="form-container">
+        <h1 class='heading'>Water Jug Problem</h1>
+        <div>This program is meant to calculate the Water Jug puzzle through
+          the least amount of steps possible.
+        </div>
+        <form class='form flex flex-column' on:submit={handleSubmit}>
+          <Input id='jug1' name='jug1' placeholder='First Jug' />
+          <Input id='jug2' name='jug2' placeholder='Second Jug' />
+          <Input id='amount' name='amount' placeholder='Liters' />
+          <Button>Calculate</Button>
+        </form>
       </div>
-      <form class='form flex flex-column' on:submit={handleSubmit}>
-        <Input id='jug1' name='jug1' placeholder='First Jug' />
-        <Input id='jug2' name='jug2' placeholder='Second Jug' />
-        <Input id='amount' name='amount' placeholder='Liters' />
-        <Button>Calculate</Button>
-      </form>
       <StepList steps={steps()} />
     </div>
   )
